@@ -117,6 +117,10 @@ alias gitf='git fetch --all'
 # Additions to PATH
 export PATH=$PATH:~/Qt/5.12.2/gcc_64/bin:~/nvim-linux64/bin
 
+# Default to neovim as text editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 # Load NVM for Node development
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
