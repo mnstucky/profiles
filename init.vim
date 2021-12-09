@@ -219,9 +219,6 @@ if &term =~ '256color'
 endif
 
 
-"" Disable the blinking cursor.
-set gcr=a:blinkon0
-
 set scrolloff=3
 
 
