@@ -113,6 +113,7 @@ alias gitc='git commit -m'
 alias gita='git add'
 alias gitg='git log --all --graph --decorate --oneline'
 alias gitf='git fetch --all -p'
+alias checkports='sudo netstat -tuplen'
 
 # Additions to PATH
 export PATH=$PATH:~/Qt/5.12.2/gcc_64/bin:~/nvim-linux64/bin
