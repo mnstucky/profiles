@@ -50,7 +50,11 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tomasiser/vim-code-dark'
-
+Plug 'dense-analysis/ale'
+"" Syntax highlighting
+Plug 'sheerun/vim-polyglot'
+"" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -84,17 +88,9 @@ Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
 
-" javascript
-"" Javascript Bundle
-Plug 'jelera/vim-javascript-syntax'
-
-
 " rust
 " Vim racer
 Plug 'racer-rust/vim-racer'
-
-" Rust.vim
-Plug 'rust-lang/rust.vim'
 
 " Async.vim
 Plug 'prabirshrestha/async.vim'
@@ -107,11 +103,6 @@ Plug 'prabirshrestha/asyncomplete.vim'
 
 " Asyncomplete lsp.vim
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
-
-" typescript
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
 
 
 "*****************************************************************************
@@ -177,7 +168,7 @@ let g:session_command_aliases = 1
 "*****************************************************************************
 syntax on
 set ruler
-set number
+set relativenumber
 
 let no_buffers_menu=1
 colorscheme codedark
@@ -281,7 +272,7 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
-let Grep_Default_Options = '-IR'
+" let Grep_Default_Options = ''
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
@@ -406,6 +397,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 " ale
 let g:ale_linters = {}
+let g:ale_fixers = { 'javascript': ['prettier'], 'typescript': ['prettier'] }
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
