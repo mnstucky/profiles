@@ -104,7 +104,6 @@ Plug 'prabirshrestha/asyncomplete.vim'
 " Asyncomplete lsp.vim
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
-
 "*****************************************************************************
 "*****************************************************************************
 
@@ -397,7 +396,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 " ale
 let g:ale_linters = {}
-let g:ale_fixers = { 'javascript': ['prettier'], 'typescript': ['prettier'] }
+let g:ale_fixers = { 'javascript': ['prettier'], 'typescript': ['prettier'], 'typescriptreact': ['prettier'] }
+let g:ale_completion_enabled = 1
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
