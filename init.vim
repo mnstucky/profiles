@@ -396,8 +396,9 @@ let g:UltiSnipsEditSplit="vertical"
 
 " ale
 let g:ale_linters = {}
-let g:ale_fixers = { 'javascript': ['prettier'], 'typescript': ['prettier'], 'typescriptreact': ['prettier'] }
+let g:ale_fixers = ['prettier']
 let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
