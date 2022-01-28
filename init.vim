@@ -41,7 +41,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
@@ -269,11 +268,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
-" grep.vim
-nnoremap <silent> <leader>f :Rgrep<CR>
-" let Grep_Default_Options = ''
-let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git node_modules'
+"" Use FZF and rg for file finding in projects
+nnoremap <silent> <leader>f :Rg<CR>
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
