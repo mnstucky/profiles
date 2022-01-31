@@ -97,11 +97,6 @@ Plug 'prabirshrestha/async.vim'
 " Vim lsp
 Plug 'prabirshrestha/vim-lsp'
 
-" Asyncomplete.vim
-Plug 'prabirshrestha/asyncomplete.vim'
-
-" Asyncomplete lsp.vim
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 "*****************************************************************************
 "*****************************************************************************

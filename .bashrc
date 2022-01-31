@@ -114,6 +114,7 @@ alias gita='git add'
 alias gitg='git log --all --graph --decorate --oneline'
 alias gitf='git fetch --all -p'
 alias gitb='git branch -r'
+alias gitl="git log -p"
 alias checkports='sudo netstat -tuplen'
 alias wport='sudo tcpdump -nS port'
 alias wportd='sudo tcpdump -nnvvXS port' 
