@@ -330,7 +330,7 @@ noremap <Leader>v :<C-u>vsplit<CR>
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Git commit --verbose<CR>
 noremap <Leader>gsh :Git push<CR>
-noremap <Leader>gll :Gpull<CR>
+noremap <Leader>gll :Git pull<CR>
 noremap <Leader>gs :Git<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
@@ -378,6 +378,7 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>. :ALECodeAction<CR>
 nnoremap <silent> <leader>d :ALEDetail<CR>
+nnoremap <silent> <leader>j :ALEGoToDefinition<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
