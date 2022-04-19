@@ -133,3 +133,6 @@ export NVM_DIR="$HOME/.nvm"
 
 source ~/profiles/git-prompt.sh
 . "$HOME/.cargo/env"
+
+# Load custom global NPM directory
+export PATH=~/.npm-global/bin:$PATH
