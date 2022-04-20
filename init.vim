@@ -390,7 +390,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 " ale
 let g:ale_linters = {}
-let g:ale_fixers = {'javascript': ['prettier'], 'typescript': ['prettier'], 'typescriptreact': ['prettier'], 'rust': ['rustfmt']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'], 'typescriptreact': ['prettier', 'eslint'], 'rust': ['rustfmt']}
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 
