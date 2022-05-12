@@ -48,6 +48,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'tomasiser/vim-code-dark'
+Plug 'haishanh/night-owl.vim'
 Plug 'dense-analysis/ale'
 "" Syntax highlighting
 Plug 'sheerun/vim-polyglot'
@@ -163,7 +164,7 @@ set ruler
 set relativenumber
 
 let no_buffers_menu=1
-colorscheme codedark
+colorscheme night-owl
 
 
 set mousemodel=popup
@@ -199,6 +200,10 @@ endif
 
 if &term =~ '256color'
   set t_ut=
+endif
+
+if (has("termguicolors"))
+    set termguicolors
 endif
 
 
@@ -335,16 +340,14 @@ noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 
-" session management
-nnoremap <leader>so :OpenSession<Space>
-nnoremap <leader>ss :SaveSession<Space>
-nnoremap <leader>sd :DeleteSession<CR>
-nnoremap <leader>sc :CloseSession<CR>
-
 "" Tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
+
+"" Easier saves and quits
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
 
 "" Set working directory
 nnoremap <leader>cd :lcd %:p:h<CR>
@@ -378,6 +381,7 @@ nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>. :ALECodeAction<CR>
 nnoremap <silent> <leader>d :ALEDetail<CR>
 nnoremap <silent> <leader>j :ALEGoToDefinition<CR>
+nnoremap <silent> <leader>r :ALEFindReferences<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
@@ -389,8 +393,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " ale
-let g:ale_linters = {}
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'], 'typescriptreact': ['prettier', 'eslint'], 'rust': ['rustfmt']}
+let g:ale_linters = {'cpp': ['clazy']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'], 'typescriptreact': ['prettier', 'eslint'], 'rust': ['rustfmt'], 'cpp': ['clazy']}
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 
@@ -421,9 +425,7 @@ endif
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
 
 "" Close buffer
 noremap <leader>c :bd<CR>
