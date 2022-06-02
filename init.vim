@@ -336,10 +336,15 @@ noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Git commit --verbose<CR>
 noremap <Leader>gsh :Git push<CR>
 noremap <Leader>gll :Git pull<CR>
+noremap <Leader>glg :0Gclog<CR>
 noremap <Leader>gs :Git<CR>
 noremap <Leader>gb :Git blame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
+
+"" Quickfix
+noremap <Leader>[ :cNext<CR>
+noremap <Leader>] :cnext<CR>
 
 "" Tabs
 nnoremap <Tab> gt
@@ -383,6 +388,7 @@ nnoremap <silent> <leader>. :ALECodeAction<CR>
 nnoremap <silent> <leader>d :ALEDetail<CR>
 nnoremap <silent> <leader>j :ALEGoToDefinition<CR>
 nnoremap <silent> <leader>r :ALEFindReferences<CR>
+nnoremap <silent> <leader>n :ALENext<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
