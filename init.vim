@@ -400,10 +400,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " ale
-let g:ale_linters = {'cpp': ['clazy']}
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'], 'typescriptreact': ['prettier', 'eslint'], 'rust': ['rustfmt'], 'cpp': ['clazy']}
+" let g:ale_linters = {'cpp': ['clangtidy', 'ccls']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'], 'typescriptreact': ['prettier', 'eslint'], 'rust': ['rustfmt'], 'cpp': ['clang-format', 'ccls']}
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
+
+" linter/fixer options
+let g:ale_clangformat_style_option = 'LLVM'
+let g:ale_cpp_clangtidy_checks = ['bugprone-*', 'cppcoreguidelines-*', '-cppcoreguidelines-avoid-magic-numbers']
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
